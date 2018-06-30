@@ -1,16 +1,18 @@
 <?include_once($_SERVER["DOCUMENT_ROOT"].'/pages/functions.php')?>
-
+<?date_default_timezone_set('Europe/Moscow');?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-
   <meta charset="UTF-8">
   <title>Главная</title>
   <link href="css/normalize.min.css" rel="stylesheet">
   <link href="<?$_SERVER["DOCUMENT_ROOT"];?>/css/style.css" rel="stylesheet">
 </head>
 <body>
-<?=priceFormat(11491);?>
+
+<?
+
+?>
 <header class="main-header">
   <div class="main-header__container container">
     <h1 class="visually-hidden">YetiCave</h1>
