@@ -5,19 +5,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Главная</title>
-  <link href="css/normalize.min.css" rel="stylesheet">
-  <link href="<?$_SERVER["DOCUMENT_ROOT"];?>/css/style.css" rel="stylesheet">
+  <link href="/css/normalize.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
 
 <?
+$ts = time();
+$toMidnight = strtotime('tomorrow');
+$diff =   - $ts;
+echo $toMidnight.'<br>';
+echo $ts;
+$hours = floor($diff / 3600);
+$minutes = floor(($diff % 3600) / 60);
+echo 'До полуночи '.$hours.' часов '.$minutes.' минут';
 
 ?>
 <header class="main-header">
   <div class="main-header__container container">
     <h1 class="visually-hidden">YetiCave</h1>
     <a class="main-header__logo">
-      <img src="<?$_SERVER["DOCUMENT_ROOT"];?>/img/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
+      <img src="/img/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
     </a>
     <form class="main-header__search" method="get" action="https://echo.htmlacademy.ru">
       <input type="search" name="search" placeholder="Поиск лота">
@@ -125,7 +133,7 @@
       <?foreach($stuff as $elements){?>
       <li class="lots__item lot">
         <div class="lot__image">
-          <img src="<?$_SERVER["DOCUMENT_ROOT"];?><?=$elements["URL"];?>" width="350" height="260" alt="Сноуборд">
+          <img src="<?=$elements["URL"];?>" width="350" height="260" alt="Сноуборд">
         </div>
 
         <div class="lot__info">
