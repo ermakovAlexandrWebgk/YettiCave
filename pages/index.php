@@ -1,3 +1,5 @@
+<?include_once($_SERVER["DOCUMENT_ROOT"].'/pages/functions.php')?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -9,7 +11,7 @@
 </head>
 <body>
 
-
+?>
 <header class="main-header">
   <div class="main-header__container container">
     <h1 class="visually-hidden">YetiCave</h1>
@@ -44,6 +46,49 @@
     </nav>
   </div>
 </header>
+ <?$categories = ['Доски и лыжи', "Крепления", "Ботиники", "Одежда", "Инструменты", "Разное"];
+ $stuff = [
+    [
+    'NAME' => 'Rossingol district snowboadr',
+    'CATEGORY' => 'Доски и лыжи',
+    'PRICE'     => '1099',
+    'URL'   => '/img/lot-1.jpg'
+    ],
+    [
+    'NAME' => 'DC ply mens snowboard',
+    'CATEGORY' => 'Доски и лыжи',
+    'PRICE'     => '159999',
+    'URL'   => '/img/lot-2.jpg'
+    ],
+    [
+    'NAME' => 'Крепления Union',
+    'CATEGORY' => 'Крепления',
+    'PRICE'     => '8000',
+    'URL'   => '/img/lot-3.jpg'
+    ],
+    [
+    'NAME' => 'Ботинки для сноуборда',
+    'CATEGORY' => 'Ботинки',
+    'PRICE'     => '10999',
+    'URL'   => '/img/lot-4.jpg'
+    ],
+    [
+    'NAME' => 'Куртка для сноуборда',
+    'CATEGORY' => 'Одежда',
+    'PRICE'     => '7500',
+    'URL'   => '/img/lot-5.jpg'
+    ],
+    [
+    'NAME' => 'Маска Oakley',
+    'CATEGORY' => 'Разное',
+    'PRICE'     => '5400',
+    'URL'   => '/img/lot-6.jpg'
+    ],
+
+
+ ];
+
+?>
 
 <main class="container">
   <section class="promo">
@@ -74,140 +119,46 @@
     <div class="lots__header">
       <h2>Открытые лоты</h2>
     </div>
+
     <ul class="lots__list">
+      <?foreach($stuff as $elements){?>
       <li class="lots__item lot">
         <div class="lot__image">
-          <img src="<?$_SERVER["DOCUMENT_ROOT"];?>/img/lot-1.jpg" width="350" height="260" alt="Сноуборд">
+          <img src="<?$_SERVER["DOCUMENT_ROOT"];?><?=$elements["URL"];?>" width="350" height="260" alt="Сноуборд">
         </div>
+
         <div class="lot__info">
-          <span class="lot__category">Доски и лыжи</span>
-          <h3 class="lot__title"><a class="text-link" href="lot.html">2014 Rossignol District Snowboard</a></h3>
+
+          <span class="lot__category"><?=$elements["CATEGORY"];?></span>
+          <h3 class="lot__title"><a class="text-link" href="lot.html"><?=$elements["NAME"];?></a></h3>
           <div class="lot__state">
             <div class="lot__rate">
               <span class="lot__amount">Стартовая цена</span>
-              <span class="lot__cost">10 999<b class="rub">р</b></span>
+              <span class="lot__cost"><?=$elements["PRICE"];?><b class="rub">р</b></span>
             </div>
             <div class="lot__timer timer">
               16:54:12
             </div>
           </div>
         </div>
+
+
       </li>
-      <li class="lots__item lot">
-        <div class="lot__image">
-          <img src="<?$_SERVER["DOCUMENT_ROOT"];?>/img/lot-2.jpg" width="350" height="260" alt="Сноуборд">
-        </div>
-        <div class="lot__info">
-          <span class="lot__category">Доски и лыжи</span>
-          <h3 class="lot__title"><a class="text-link" href="lot.html">DC Ply Mens 2016/2017 Snowboard</a></h3>
-          <div class="lot__state">
-            <div class="lot__rate">
-              <span class="lot__amount">12 ставок</span>
-              <span class="lot__cost">15 999<b class="rub">р</b></span>
-            </div>
-            <div class="lot__timer timer timer--finishing">
-              00:54:12
-            </div>
-          </div>
-        </div>
-      </li>
-      <li class="lots__item lot">
-        <div class="lot__image">
-          <img src="<?$_SERVER["DOCUMENT_ROOT"];?>/img/lot-3.jpg" width="350" height="260" alt="Крепления">
-        </div>
-        <div class="lot__info">
-          <span class="lot__category">Крепления</span>
-          <h3 class="lot__title"><a class="text-link" href="lot.html">Крепления Union Contact Pro 2015 года размер L/XL</a></h3>
-          <div class="lot__state">
-            <div class="lot__rate">
-              <span class="lot__amount">7 ставок</span>
-              <span class="lot__cost">8 000<b class="rub">р</b></span>
-            </div>
-            <div class="lot__timer timer">
-              10:54:12
-            </div>
-          </div>
-        </div>
-      </li>
-      <li class="lots__item lot">
-        <div class="lot__image">
-          <img src="<?$_SERVER["DOCUMENT_ROOT"];?>/img/lot-4.jpg" width="350" height="260" alt="Ботинки">
-        </div>
-        <div class="lot__info">
-          <span class="lot__category">Ботинки</span>
-          <h3 class="lot__title"><a class="text-link" href="lot.html">Ботинки для сноуборда DC Mutiny Charocal</a></h3>
-          <div class="lot__state">
-            <div class="lot__rate">
-              <span class="lot__amount">12 ставок</span>
-              <span class="lot__cost">10 999<b class="rub">р</b></span>
-            </div>
-            <div class="lot__timer timer timer--finishing">
-              00:12:03
-            </div>
-          </div>
-        </div>
-      </li>
-      <li class="lots__item lot">
-        <div class="lot__image">
-          <img src="<?$_SERVER["DOCUMENT_ROOT"];?>/img/lot-5.jpg" width="350" height="260" alt="Куртка">
-        </div>
-        <div class="lot__info">
-          <span class="lot__category">Одежда</span>
-          <h3 class="lot__title"><a class="text-link" href="lot.html">Куртка для сноуборда DC Mutiny Charocal</a></h3>
-          <div class="lot__state">
-            <div class="lot__rate">
-              <span class="lot__amount">12 ставок</span>
-              <span class="lot__cost">10 999<b class="rub">р</b></span>
-            </div>
-            <div class="lot__timer timer">
-              00:12:03
-            </div>
-          </div>
-        </div>
-      </li>
-      <li class="lots__item lot">
-        <div class="lot__image">
-          <img src="<?$_SERVER["DOCUMENT_ROOT"];?>/img/lot-6.jpg" width="350" height="260" alt="Маска">
-        </div>
-        <div class="lot__info">
-          <span class="lot__category">Разное</span>
-          <h3 class="lot__title"><a class="text-link" href="lot.html">Маска Oakley Canopy</a></h3>
-          <div class="lot__state">
-            <div class="lot__rate">
-              <span class="lot__amount">Стартовая цена</span>
-              <span class="lot__cost">5 500<b class="rub">р</b></span>
-            </div>
-            <div class="lot__timer timer">
-              07:13:34
-            </div>
-          </div>
-        </div>
-      </li>
+      <?}?>
+
     </ul>
+
   </section>
 </main>
 
 <footer class="main-footer">
   <nav class="nav">
     <ul class="nav__list container">
+    <?foreach ($categories as $value){?>
       <li class="nav__item">
-        <a href="all-lots.html">Доски и лыжи</a>
+        <a href="all-lots.html"><?=$value?></a>
       </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Крепления</a>
-      </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Ботинки</a>
-      </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Одежда</a>
-      </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Инструменты</a>
-      </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Разное</a>
-      </li>
+      <?}?>
     </ul>
   </nav>
   <div class="main-footer__bottom container">
