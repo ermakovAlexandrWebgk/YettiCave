@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+
   <meta charset="UTF-8">
   <title>Главная</title>
   <link href="css/normalize.min.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <link href="<?$_SERVER["DOCUMENT_ROOT"];?>/css/style.css" rel="stylesheet">
 </head>
 <body>
+
 
 <header class="main-header">
   <div class="main-header__container container">
     <h1 class="visually-hidden">YetiCave</h1>
     <a class="main-header__logo">
-      <img src="img/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
+      <img src="<?$_SERVER["DOCUMENT_ROOT"];?>/img/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
     </a>
     <form class="main-header__search" method="get" action="https://echo.htmlacademy.ru">
       <input type="search" name="search" placeholder="Поиск лота">
@@ -20,13 +22,25 @@
     </form>
     <a class="main-header__add-lot button" href="add-lot.html">Добавить лот</a>
     <nav class="user-menu">
+    <?$isAuth = false;?>
+    <?if($isAuth == true){?>
       <div class="user-menu__image">
-        <img src="img/user.jpg" width="40" height="40" alt="Пользователь">
+        <img src="<?$_SERVER["DOCUMENT_ROOT"];?><?=$userAvatar;?>" width="40" height="40" alt="Пользователь">
       </div>
       <div class="user-menu__logged">
-        <p>Константин</p>
+        <p><?=$UserName;?></p>
         <a href="login.html">Выйти</a>
       </div>
+      <?}else{?>
+        <ul class="user-menu__list">
+            <li class="user-menu__item">
+                <a href="#">Регистрация</a>
+            </li>
+            <li class="user-menu__item">
+                <a href="#">Вход</a>
+            </li>
+        </ul>
+      <?}?>
     </nav>
   </div>
 </header>
@@ -63,7 +77,7 @@
     <ul class="lots__list">
       <li class="lots__item lot">
         <div class="lot__image">
-          <img src="img/lot-1.jpg" width="350" height="260" alt="Сноуборд">
+          <img src="<?$_SERVER["DOCUMENT_ROOT"];?>/img/lot-1.jpg" width="350" height="260" alt="Сноуборд">
         </div>
         <div class="lot__info">
           <span class="lot__category">Доски и лыжи</span>
@@ -81,7 +95,7 @@
       </li>
       <li class="lots__item lot">
         <div class="lot__image">
-          <img src="img/lot-2.jpg" width="350" height="260" alt="Сноуборд">
+          <img src="<?$_SERVER["DOCUMENT_ROOT"];?>/img/lot-2.jpg" width="350" height="260" alt="Сноуборд">
         </div>
         <div class="lot__info">
           <span class="lot__category">Доски и лыжи</span>
@@ -99,7 +113,7 @@
       </li>
       <li class="lots__item lot">
         <div class="lot__image">
-          <img src="img/lot-3.jpg" width="350" height="260" alt="Крепления">
+          <img src="<?$_SERVER["DOCUMENT_ROOT"];?>/img/lot-3.jpg" width="350" height="260" alt="Крепления">
         </div>
         <div class="lot__info">
           <span class="lot__category">Крепления</span>
@@ -117,7 +131,7 @@
       </li>
       <li class="lots__item lot">
         <div class="lot__image">
-          <img src="img/lot-4.jpg" width="350" height="260" alt="Ботинки">
+          <img src="<?$_SERVER["DOCUMENT_ROOT"];?>/img/lot-4.jpg" width="350" height="260" alt="Ботинки">
         </div>
         <div class="lot__info">
           <span class="lot__category">Ботинки</span>
@@ -135,7 +149,7 @@
       </li>
       <li class="lots__item lot">
         <div class="lot__image">
-          <img src="img/lot-5.jpg" width="350" height="260" alt="Куртка">
+          <img src="<?$_SERVER["DOCUMENT_ROOT"];?>/img/lot-5.jpg" width="350" height="260" alt="Куртка">
         </div>
         <div class="lot__info">
           <span class="lot__category">Одежда</span>
@@ -153,7 +167,7 @@
       </li>
       <li class="lots__item lot">
         <div class="lot__image">
-          <img src="img/lot-6.jpg" width="350" height="260" alt="Маска">
+          <img src="<?$_SERVER["DOCUMENT_ROOT"];?>/img/lot-6.jpg" width="350" height="260" alt="Маска">
         </div>
         <div class="lot__info">
           <span class="lot__category">Разное</span>
