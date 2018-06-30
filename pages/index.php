@@ -10,8 +10,7 @@
   <link href="<?$_SERVER["DOCUMENT_ROOT"];?>/css/style.css" rel="stylesheet">
 </head>
 <body>
-
-?>
+<?=priceFormat(11491);?>
 <header class="main-header">
   <div class="main-header__container container">
     <h1 class="visually-hidden">YetiCave</h1>
@@ -134,7 +133,7 @@
           <div class="lot__state">
             <div class="lot__rate">
               <span class="lot__amount">Стартовая цена</span>
-              <span class="lot__cost"><?=$elements["PRICE"];?><b class="rub">р</b></span>
+              <span class="lot__cost"><?=priceFormat($elements["PRICE"]);?></span>
             </div>
             <div class="lot__timer timer">
               16:54:12
