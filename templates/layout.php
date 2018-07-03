@@ -50,13 +50,17 @@
 
 <footer class="main-footer">
   <nav class="nav">
+
     <ul class="nav__list container">
-    <?foreach ($categories as $value){?>
+  <?foreach ($categories as $value){?>
       <li class="nav__item">
+
         <a href="all-lots.html"><?=$value?></a>
+
       </li>
       <?}?>
     </ul>
+
   </nav>
   <div class="main-footer__bottom container">
     <div class="main-footer__copyright">

@@ -4,6 +4,6 @@
   'stuff' => $stuff, 'hours' => $hours, 'minutes' => $minutes
 ]);
 $layout =  template($_SERVER["DOCUMENT_ROOT"].'/templates/layout.php', [
-  'content' => $main, 'categories' => $categories
+'content' => $main, 'categories' => $categories
 ]);
 print $layout;
